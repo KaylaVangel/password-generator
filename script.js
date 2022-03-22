@@ -1,5 +1,43 @@
 // Assignment code here
+function lengthPrompt() {
+  return prompt ("Please enter number of characters in password (between 8-128 characters)");
+}
 
+function tinyTextConfirm() {
+  return prompt ("Click ok to include lowercase characters"); 
+}
+
+function bigTextConfirm() {
+  return prompt ("Click ok to include uppercase characters");
+}
+
+function numbersConfirm() {
+  return prompt ("Click ok to inculde numbers as characters");
+}
+
+function specialConfirm() {
+  return prompt ("Click ok to include special characters");
+}
+
+function generatePassword() {
+  var passwordLength = lengthPrompt();
+  console.log(passwordLength);
+
+  var lowercase = tinyTextConfirm();
+  console.log(lowercase === null);
+
+  var uppercase = bigTextConfirm();
+  console.log(uppercase);
+
+  var numbers= numbersConfirm();
+  console.log(numbers);
+
+  var special= specialConfirm();
+  console.log(special);
+
+
+  return "bad password";
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -15,3 +53,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
