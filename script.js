@@ -45,6 +45,13 @@ function generatePassword() {
   var special= specialConfirm();
   console.log(special);
 
+while (lowercase===false && uppercase===false && numbers===false && special===false){
+  alert ("Please choose one input source");
+  lowercase = tinyTextConfirm();
+  uppercase = bigTextConfirm();
+  numbers = numbersConfirm();
+  special = specialConfirm();
+}
 
   return "bad password";
 }
