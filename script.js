@@ -2,7 +2,7 @@
 function lengthPrompt() {
   let size = prompt ("Please enter number of characters in password (between 8-128 characters)");
   if (isNaN(Number(size))){
-    alert ("Please enter numberical value");
+    alert ("Please enter numerical value");
     size = lengthPrompt();
   }
   if (size < 8 || size > 128) {
@@ -33,17 +33,17 @@ function generatePassword() {
   var passwordLength = lengthPrompt();
   console.log(passwordLength);
 
-  // var lowercase = tinyTextConfirm();
-  // console.log(lowercase);
+  var lowercase = tinyTextConfirm();
+  console.log(lowercase);
 
-  // var uppercase = bigTextConfirm();
-  // console.log(uppercase);
+  var uppercase = bigTextConfirm();
+  console.log(uppercase);
 
-  // var numbers= numbersConfirm();
-  // console.log(numbers);
+  var numbers= numbersConfirm();
+  console.log(numbers);
 
-  // var special= specialConfirm();
-  // console.log(special);
+  var special= specialConfirm();
+  console.log(special);
 
 
   return "bad password";
