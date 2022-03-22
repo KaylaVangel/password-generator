@@ -1,6 +1,6 @@
 // Assignment code here
 function lengthPrompt() {
-    return prompt ("Please enter length of characters in password");
+  return prompt ("Please enter number of characters in password (between 8-128 characters)");
 }
 
 function tinyTextConfirm() {
@@ -15,8 +15,8 @@ function numbersConfirm() {
   return prompt ("Click ok to inculde numbers as characters");
 }
 
-function special() {
-  return prompt ("click ok to include special characters")
+function specialConfirm() {
+  return prompt ("Click ok to include special characters");
 }
 
 function generatePassword() {
