@@ -4,19 +4,19 @@ function lengthPrompt() {
 }
 
 function tinyTextConfirm() {
-  return prompt ("Click ok to include lowercase characters"); 
+  return confirm ("Click ok to include lowercase characters"); 
 }
 
 function bigTextConfirm() {
-  return prompt ("Click ok to include uppercase characters");
+  return confirm ("Click ok to include uppercase characters");
 }
 
 function numbersConfirm() {
-  return prompt ("Click ok to inculde numbers as characters");
+  return confirm ("Click ok to inculde numbers as characters");
 }
 
 function specialConfirm() {
-  return prompt ("Click ok to include special characters");
+  return confirm ("Click ok to include special characters");
 }
 
 function generatePassword() {
@@ -24,7 +24,7 @@ function generatePassword() {
   console.log(passwordLength);
 
   var lowercase = tinyTextConfirm();
-  console.log(lowercase === null);
+  console.log(lowercase);
 
   var uppercase = bigTextConfirm();
   console.log(uppercase);
