@@ -1,32 +1,32 @@
 // Assignment code here
 function lengthPrompt() {
-  let size = prompt ("Please enter number of characters in password (between 8-128 characters)");
-  if (isNaN(Number(size))){
-    alert ("Please enter numerical value");
+  let size = prompt("Please enter number of characters in password (between 8-128 characters)");
+  if (isNaN(Number(size))) {
+    alert("Please enter numerical value");
     size = lengthPrompt();
   }
   if (size < 8 || size > 128) {
-    alert ("Please enter value between 8-128 cahracters");
+    alert("Please enter value between 8-128 cahracters");
     size = lengthPrompt();
   }
-  return size; 
+  return size;
 }
 
 
 function tinyTextConfirm() {
-  return confirm ("Click ok to include lowercase characters"); 
+  return confirm("Click ok to include lowercase characters");
 }
 
 function bigTextConfirm() {
-  return confirm ("Click ok to include uppercase characters");
+  return confirm("Click ok to include uppercase characters");
 }
 
 function numbersConfirm() {
-  return confirm ("Click ok to inculde numbers as characters");
+  return confirm("Click ok to include numbers as characters");
 }
 
 function specialConfirm() {
-  return confirm ("Click ok to include special characters");
+  return confirm("Click ok to include special characters");
 }
 
 function generatePassword() {
@@ -39,21 +39,46 @@ function generatePassword() {
   var uppercase = bigTextConfirm();
   console.log(uppercase);
 
-  var numbers= numbersConfirm();
+  var numbers = numbersConfirm();
   console.log(numbers);
 
-  var special= specialConfirm();
+  var special = specialConfirm();
   console.log(special);
 
-while (lowercase===false && uppercase===false && numbers===false && special===false){
-  alert ("Please choose one input source");
-  lowercase = tinyTextConfirm();
-  uppercase = bigTextConfirm();
-  numbers = numbersConfirm();
-  special = specialConfirm();
-}
+  while (lowercase === false && uppercase === false && numbers === false && special === false) {
+    alert("Please choose one input source");
+    lowercase = tinyTextConfirm();
+    uppercase = bigTextConfirm();
+    numbers = numbersConfirm();
+    special = specialConfirm();
+  }
 
-  return "bad password";
+  const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz";
+  const numbercharacters = "0123456789";
+  const specialcharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+
+  let characters = "";
+  if (uppercase === true) {
+    characters += uppercaseCharacters;
+  }
+  if (lowercase === true) {
+    characters += lowercaseCharacters;
+  }
+  if (numbers === true) {
+    characters += numbercharacters;
+  }
+  if (special === true) {
+    characters += specialcharacters;
+  }
+
+console.log(characters);
+
+let password = "";
+for (let i = 0; i < passwordLength; i++) {
+  password += characters.charAt(Math.floor(Math.random()*characters.length));
+}
+  return password;
 }
 
 // Get references to the #generate element
